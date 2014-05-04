@@ -1,0 +1,12 @@
+TIMEOUT 5
+ABORT 'BUSY'
+ABORT 'NO CARRIER'
+ABORT 'ERROR'
+'' AT
+SAY "Checking if we have network...\n"
+OK AT+COPS?
+'+COPS: 0,0,' ''
+SAY "Connecting to GPRS/EDGE/UMTS/3G/3G+ ...\n"
+OK AT+cgdcont=1,"IP","orange.fr","",0,0
+OK ATDT*99***1#
+CONNECT ''
